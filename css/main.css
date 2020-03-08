@@ -38,13 +38,13 @@ body {
 .header .menu a {
     text-decoration: none;
     font-size: 24px;
-    color: #404040;
+    color: #333;
     font-weight: 600;
 }
 
 .header .menu li .active,
 .header .menu li:hover a {
-    color: #d1d8e0;
+    color: #f5f6fa;
 }
 
 .header .menu ul {
