@@ -47,7 +47,7 @@ body {
 
 .header .menu ul {
     list-style-type: none;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 
 .header .menu ul li {
