@@ -3,56 +3,161 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="./images/coronavirus.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css" />
-    <script src="bootstrap-4.4.1-dist/jquery-3.4.1.min.js"></script>
-    <script src="bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
-    <script src="js/all.min.js"></script>
-    <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/homePage.css">
-    <title>Vũ Văn Mạnh</title>
+    <title>Co Vy 19</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "monserrat", sans-serif;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #251801;
+        }
+        
+        .container {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            cursor: url('./images/coronavirus.png'), pointer;
+        }
+        
+        .container .face {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffcd00;
+            margin: 0 20px;
+            transition: 0.5s;
+        }
+        
+        .container .face::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 70px;
+            border-radius: 0 0 70px 70px;
+            background: #b57700;
+            transition: 0.5s;
+            top: 180px;
+        }
+        
+        .container .face:hover::before {
+            top: 210px;
+            width: 150px;
+            height: 20px;
+            border-radius: 0;
+            background-color: #9d0b00;
+        }
+        
+        .container .face:hover {
+            background: linear-gradient(180deg, #f44336, #f44336, #ffcd00);
+        }
+        
+        .container .face .eyes {
+            position: relative;
+            top: 0;
+            display: flex;
+            flex-wrap: wrap;
+            top: -40px;
+        }
+        
+        .container .face .eyes .eye {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 15px;
+            background: #fff;
+            border-radius: 50%;
+            display: block;
+        }
+        
+        .container .face .eyes .eye::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 25px;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+        }
+        
+        .container h2 {
+            font-size: 42px;
+            color: #fff;
+            position: absolute;
+            font-weight: bold;
+        }
+        
+        .container h2:first-child {
+            top: 80px;
+        }
+        
+        .container h2:last-child {
+            bottom: 80px
+        }
+    </style>
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="header_default">
-                <div class="logo">
-                    MVP
-                </div>
-                <div class="menu">
-                    <ul>
-                        <li><a class="active" href="#">Home</a></li>
-                        <li><a href="#">About me</a></li>
-                        <li><a href="#">My job</a></li>
-                        <li><a href="#">Plans</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
+
+    <div class="container">
+        <h2>Do not be happy to see others in trouble</h2>
+        <div class="face">
+            <div class="eyes">
+                <span class="eye"></span>
+                <span class="eye"></span>
             </div>
         </div>
-    </div>
-    <div class="container container_card">
-        <div class="cd middle">
-            <div class="front_cd">
-                <img src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.0-9/p960x960/65991019_936065600075542_6330077965128302592_o.jpg?_nc_cat=111&_nc_sid=7aed08&_nc_oc=AQkQ1SMrz0R489h-UwugtHjecdvw3k9BrBfN5shCkhFCM6woYOSnn3ZpaMcM9e5DGIRCvk6NQ16Icus_bKeyl3gS&_nc_ht=scontent-hkt1-1.xx&_nc_tp=6&oh=2dc95e643a724ceb5ce720fca9f5b1a8&oe=5E996DC1"
-                    alt="image">
-            </div>
-            <div class="back_cd">
-                <div class="back_content middle">
-                    <h2>Boring life</h2>
-                    <div class="sm">
-                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href=""><i class="fab fa-youtube"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
+
+        <div class="face">
+            <div class="eyes">
+                <span class="eye"></span>
+                <span class="eye"></span>
             </div>
         </div>
+
+        <div class="face">
+            <div class="eyes">
+                <span class="eye"></span>
+                <span class="eye"></span>
+            </div>
+        </div>
+
+        <h2>Let's unite and fight together width Covid-19</h2>
     </div>
+
+    <script>
+        document.querySelector('body').addEventListener('mousemove', eyeball);
+
+        function eyeball() {
+            var eyes = document.querySelectorAll('.eye');
+            eyes.forEach((eye) => {
+                let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
+                let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
+                let radian = Math.atan2(event.pageX - x, event.pageY - y);
+                let rot = (radian * (180 / Math.PI) * -1) + 270;
+                eye.style.transform = "rotate(" + rot + "deg)"
+            })
+        }
+    </script>
 </body>
 
 </html>
