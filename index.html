@@ -5,134 +5,27 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="./images/coronavirus.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css.css">
     <title>Co Vy 19</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: "monserrat", sans-serif;
-            box-sizing: border-box;
-        }
-        
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #251801;
-        }
-        
-        .container {
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            width: 100vw;
-            height: 100vh;
-            cursor: url('./images/coronavirus.png'), pointer;
-        }
-        
-        .container .face {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #ffcd00;
-            margin: 0 20px;
-            transition: 0.5s;
-        }
-        
-        .container .face::before {
-            content: '';
-            position: absolute;
-            width: 150px;
-            height: 70px;
-            border-radius: 0 0 70px 70px;
-            background: #b57700;
-            transition: 0.5s;
-            top: 180px;
-        }
-        
-        .container .face:hover::before {
-            top: 210px;
-            width: 150px;
-            height: 20px;
-            border-radius: 0;
-            background-color: #9d0b00;
-        }
-        
-        .container .face:hover {
-            background: linear-gradient(180deg, #f44336, #f44336, #ffcd00);
-        }
-        
-        .container .face .eyes {
-            position: relative;
-            top: 0;
-            display: flex;
-            flex-wrap: wrap;
-            top: -40px;
-        }
-        
-        .container .face .eyes .eye {
-            position: relative;
-            width: 80px;
-            height: 80px;
-            margin: 0 15px;
-            background: #fff;
-            border-radius: 50%;
-            display: block;
-        }
-        
-        .container .face .eyes .eye::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 25px;
-            transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
-            background-color: #333;
-            border-radius: 50%;
-        }
-        
-        .container h2 {
-            font-size: 42px;
-            color: #fff;
-            position: absolute;
-            font-weight: bold;
-        }
-        
-        .container h2:first-child {
-            top: 80px;
-        }
-        
-        .container h2:last-child {
-            bottom: 80px
-        }
-    </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="container" id="container_1">
         <h2>Do not be happy to see others in trouble</h2>
-        <div class="face">
+        <!-- <div class="face">
             <div class="eyes">
                 <span class="eye"></span>
                 <span class="eye"></span>
             </div>
-        </div>
+        </div> -->
 
-        <div class="face">
+        <!-- <div class="face">
             <div class="eyes">
                 <span class="eye"></span>
                 <span class="eye"></span>
             </div>
-        </div>
+        </div> -->
 
         <div class="face">
             <div class="eyes">
@@ -144,8 +37,30 @@
         <h2>Let's unite and fight together width Covid-19</h2>
     </div>
 
+    <div class="container" id="love">
+        <div class="face love-face">
+            <div class="eyes">
+                <span class="eye"></span>
+                <span class="eye"></span>
+            </div>
+        </div>
+    </div>
     <script>
-        document.querySelector('body').addEventListener('mousemove', eyeball);
+        document.querySelector('#container_1').addEventListener('mousemove', eyeball);
+        document.querySelector('#love').addEventListener('mousemove', eyeball);
+
+        document.querySelector('.love-face').addEventListener('mouseover', () => {
+            document.querySelectorAll('.love-face .eyes span').forEach((span) => {
+                span.classList.add('heart');
+                span.classList.remove('eye');
+            })
+        });
+        document.querySelector('.love-face').addEventListener('mouseout', () => {
+            document.querySelectorAll('.love-face .eyes span').forEach((span) => {
+                span.classList.add('eye');
+                span.classList.remove('heart');
+            })
+        });
 
         function eyeball() {
             var eyes = document.querySelectorAll('.eye');
