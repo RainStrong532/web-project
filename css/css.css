@@ -107,6 +107,7 @@
        
        #love {
            background-color: wheat;
+           cursor: pointer;
        }
        
        #love .face .eyes .heart {
