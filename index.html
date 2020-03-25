@@ -36,31 +36,8 @@
 
         <h2>Let's unite and fight together width Covid-19</h2>
     </div>
-
-    <div class="container" id="love">
-        <div class="face love-face">
-            <div class="eyes">
-                <span class="eye"></span>
-                <span class="eye"></span>
-            </div>
-        </div>
-    </div>
     <script>
         document.querySelector('#container_1').addEventListener('mousemove', eyeball);
-        document.querySelector('#love').addEventListener('mousemove', eyeball);
-
-        document.querySelector('.love-face').addEventListener('mouseover', () => {
-            document.querySelectorAll('.love-face .eyes span').forEach((span) => {
-                span.classList.add('heart');
-                span.classList.remove('eye');
-            })
-        });
-        document.querySelector('.love-face').addEventListener('mouseout', () => {
-            document.querySelectorAll('.love-face .eyes span').forEach((span) => {
-                span.classList.add('eye');
-                span.classList.remove('heart');
-            })
-        });
 
         function eyeball() {
             var eyes = document.querySelectorAll('.eye');
